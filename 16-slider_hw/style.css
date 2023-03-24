@@ -1,0 +1,22 @@
+#slider {
+    width: 400px;
+    height: 400px;
+    border: 1px solid gold;
+    overflow: hidden;
+    
+    transition: all .5s;
+}
+
+.slider-item {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    display: none;
+
+
+}
+
+.slider-item-active {
+    display: block;
+}
+

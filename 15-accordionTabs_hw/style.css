@@ -1,0 +1,19 @@
+
+.nav-item {
+    background-color: lightblue;
+    width: 60px;
+}
+.content-item {
+    height: 100px;
+    display: none;
+}
+
+.content-item-active {
+    background-color: yellow;
+    /* border: 1px solid black; */
+    display: block;
+}
+
+.nav-item-active {
+    background-color: yellow;
+}

@@ -1,6 +1,7 @@
 class Slider {
     static CLASS_SLIDER_ITEM = 'slider-item'
     static CLASS_SLIDER_ITEM_ACTIVE = 'slider-item-active'
+    static CLASS_DEFAULT_ACTIVE_INDEX = 0
     constructor (rootEl) {
         this.rootEl = rootEl
         this.rootEls = Array.from(this.rootEl.children)
@@ -8,12 +9,12 @@ class Slider {
 
         this.bindStyles()
         this.bindEvent()
+        this.showSliderByIndex(Slider.CLASS_DEFAULT_ACTIVE_INDEX)
     }
     bindStyles () {
         this.rootEls.forEach((el) => {
             el.classList.add(Slider.CLASS_SLIDER_ITEM)
         })
-        this.rootEls[0].classList.add(Slider.CLASS_SLIDER_ITEM_ACTIVE)
     }
     bindEvent() {
         this.rootEl.addEventListener('click', (e) => this.onRootElClick(e))
@@ -56,5 +57,8 @@ class Slider {
     }
     isElLastInArr(index, arr) {
         return index + 1 > arr.length - 1
+    }
+    showSliderByIndex(index) {
+        this.rootEls[index].classList.add(Slider.CLASS_SLIDER_ITEM_ACTIVE)
     }
 }

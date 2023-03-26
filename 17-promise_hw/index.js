@@ -11,13 +11,20 @@ function onFindUserBtnClick () {
 
     fetch(` https://api.github.com/users/${userName}`)
     .then((response) => {
+        if (!response.ok) {
+            throw new Error('entered wrong user name')
+        }
         return response.json()
+        
     })
-
+    
     .then((userData) =>{
         renderUser(userData)
     })
-
+    .catch((error) => {
+            console.log(error.message);
+        })
+    
     clearInput()
 }
 

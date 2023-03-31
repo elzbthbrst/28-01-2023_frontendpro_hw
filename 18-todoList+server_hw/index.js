@@ -86,10 +86,11 @@ function renderTodoList(list) {
 }
 
 function getTemplateTodo(todo) {
-    if (todo.done === true) {
-        return `<li class="listElem background-green" id="${todo.id}">${todo.title}<button class="deleteBtn">Delete</button></li>`
+    const {id, done, title} = todo
+    if (done === true) {
+        return `<li class="listElem background-green" id="${id}">${title}<button class="deleteBtn">Delete</button></li>`
     } else {
-       return `<li class="listElem " id="${todo.id}">${todo.title}<button class="deleteBtn">Delete</button></li>`
+       return `<li class="listElem " id="${id}">${title}<button class="deleteBtn">Delete</button></li>`
     }
 }
 

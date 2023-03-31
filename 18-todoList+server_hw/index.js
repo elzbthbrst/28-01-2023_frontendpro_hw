@@ -50,7 +50,16 @@ function onTodoListClick(e) {
         removeEl(todoEl)
     } else {
         changeBackground(todoEl)
+        const id = todoEl.id
+        const colorStatus = todoEl.classList.contains('background-green')
+        TodoApis
+            .update(id, colorStatus)
+            .catch((error) => {
+            showError(error)
+            })
+        
     }
+   
 }
 
 function getTodo() {
@@ -77,7 +86,11 @@ function renderTodoList(list) {
 }
 
 function getTemplateTodo(todo) {
-    return `<li class="listElem" id="${todo.id}">${todo.title}<button class="deleteBtn">Delete</button></li>`
+    if (todo.done === true) {
+        return `<li class="listElem background-green" id="${todo.id}">${todo.title}<button class="deleteBtn">Delete</button></li>`
+    } else {
+       return `<li class="listElem " id="${todo.id}">${todo.title}<button class="deleteBtn">Delete</button></li>`
+    }
 }
 
 function clearForm() {
@@ -99,9 +112,5 @@ function removeEl(element) {
 }
 
 function changeBackground(element) {
-    if (element.style.background === 'lightgreen') {
-        element.style.background = 'white'
-    } else {
-        element.style.background = 'lightgreen'
-    }
+    element.classList.toggle('background-green')
 }

@@ -1,6 +1,6 @@
 class TodoApis {
     static API = `https://6425805b7ac292e3cf0278f7.mockapi.io/api/todo`
-    // static API_BY_INDEX = `https://6425805b7ac292e3cf0278f7.mockapi.io/api/todo/${id}`
+    
     static getList() {
         return fetch(TodoApis.API)
             .then((res) => {
@@ -41,23 +41,24 @@ class TodoApis {
                 throw new Error('cant delete todo on server')
             })
     }
-    static update(todoEl) {
-        // const id = todoEl.id
-        // return fetch(`https://6425805b7ac292e3cf0278f7.mockapi.io/api/todo/${id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(todoEl)
-        // })
-        //     .then((res) => {
-        //         if (res.ok) {
-        //             return res.json()
-        //         }
-        //         throw new Error('cant update todo on server')
-        //     })
+    static update(id, colorStatus) {
+        return fetch(`https://6425805b7ac292e3cf0278f7.mockapi.io/api/todo/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                done: colorStatus,
+            })
+        })
+            .then((res) => {
+                if (res.ok) {
+                    return res.json()
+                }
+                throw new Error('cant update todo on server')
+            })
     }
-    
+
 }
 
 

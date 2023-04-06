@@ -29,7 +29,7 @@ function onGalleryListClick(e) {
 }
 
 function getAlbumEl(el) {
-    return el.closest('.album-item')
+    return el.closest(CLASS_ALBUM_ITEM)
 }
 
 function showPhotos(album) {

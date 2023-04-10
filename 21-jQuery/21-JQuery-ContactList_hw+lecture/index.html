@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" defer></script>
+  <script src="ConactsApi.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <form id="contactsForm">
+    <input type="hidden" id = "id">
+    <input type="text" id="firstName">
+    <input type="text" id="lastName">
+    <input type="text" id="phone">
+    <button id="saveBtn">Add User</button>
+  </form>
+  <table>
+    <!-- заголовки -->
+    <tr>
+      <th class="first-name">FirstName</th>
+      <th class="last-name">LastName</th>
+      <th class="phone">Phone</th>
+      <th class="action">Action</th>
+    </tr>
+    <tbody id="contactsContainer"></tbody>
+  </table>
+
+
+</body>
+
+</html>

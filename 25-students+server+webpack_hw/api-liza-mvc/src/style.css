@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+}
+.container {
+    width: 500px;
+}
+.headers {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px;
+    justify-items: center;
+    font-weight: bold;
+}
+.student {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    /* justify-items: center; */
+    grid-gap: 10px;
+}
+.marks {
+    display: flex;
+    justify-content: space-between; 
+}
+.mark-input {
+    width: 20px;
+}
+.mark-input:focus {
+    color: red;
+}
+.saveForm {
+    margin-top: 10px;
+}

@@ -11,6 +11,7 @@ function onFormSubmit(e) {
     const messageData = getMessage()
     if (!isDataValid(messageData)) {
         showError('Поле не должно быть пустым')
+        return
     }
 
     ws.send(JSON.stringify(messageData))
@@ -44,10 +45,13 @@ ws.onerror = (error) => {
 }
 
 function getTemplateHtml(data) {
-    return `<tr>
-    <td >${data.name}</td>
-    <td>${data.message}</td>
-        </tr>`
+    const {name, message} = data
+    return `
+        <tr>
+            <td >${name}</td>
+            td>${message}</td>
+        </tr>
+        `
 }
 
 function getMessage() {

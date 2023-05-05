@@ -49,7 +49,7 @@ function getTemplateHtml(data) {
     return `
         <tr>
             <td >${name}</td>
-            td>${message}</td>
+            <td>${message}</td>
         </tr>
         `
 }
